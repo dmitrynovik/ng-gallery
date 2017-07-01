@@ -1,4 +1,4 @@
-# Angular2 simple carousal gallery
+# Angular2 simple carousel image gallery
 
 ## Functionality
 * Pasting image from clipboard into the window adds an image (supported by Google Chrome, Mozilla Firefox)
