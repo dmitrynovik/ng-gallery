@@ -54,4 +54,8 @@ export default class ImageList {
 
     toggleState = () => this.isPlaying ? this.stop() : this.play();
 
+    addImage = (src: string) => {
+        if (!this.images.find(i => i.src == src))
+            this.images.push({src: src});
+    }
 }
