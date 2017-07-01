@@ -7,7 +7,7 @@ import { GalleryComponent }  from './gallery.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent, SlideComponent, GalleryComponent ],
+  declarations: [ AppComponent, SlideComponent, GalleryComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

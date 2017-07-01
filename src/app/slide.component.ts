@@ -5,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: `./slide.component.html`,
 })
 export class SlideComponent  { 
-    @Input() image:Image;
+    @Input() image:any;
 }
