@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, Renderer2 } from '@angular/core';
+import { Component, AfterContentInit, Renderer2, ElementRef } from '@angular/core';
 import ImageList from './image-list';
 
 @Component({
@@ -14,18 +14,18 @@ export class AppComponent implements AfterContentInit  {
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/72/Sydney_skyline_from_the_north_aerial_2010.jpg"}
     ]);
 
-    constructor(private renderer: Renderer2) {
+    constructor(private renderer: Renderer2, private elementRef: ElementRef) {
     }
 
     ngAfterContentInit() {
         this.images.play();
 
-        this.renderer.listen('document', 'paste', (event:any) => {
+        this.renderer.listen(this.elementRef.nativeElement, 'paste', (event:any) => {
             console.log('paste detected');         
 
             const clipboard = event.clipboardData || event.originalEvent.clipboardData;
             if (clipboard && clipboard.items && clipboard.items) {
-				
+
 			for (let index in clipboard.items) {
     			var item = clipboard.items[index];
     			if (item.kind === 'file') {
