@@ -18,6 +18,7 @@
   float: left;
   margin-right: 33px;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .thumbnail.selected {
