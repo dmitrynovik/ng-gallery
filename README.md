@@ -1,5 +1,7 @@
 # Angular2 simple carousel image gallery
 
+![Screenshot](Screenshot.png?raw=true)
+
 ## Functionality
 * Pasting image from clipboard into the window adds an image (supported by Google Chrome, Mozilla Firefox)
 * clicking on thumbnail selects that image
