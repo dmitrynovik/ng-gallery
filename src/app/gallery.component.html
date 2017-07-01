@@ -1,5 +1,5 @@
 <div class="thumbnails">
     <div *ngFor="let image of images">
-        <img class="thumbnail" [src]="image.src" />
+        <img [className]="image.isSelected ? 'thumbnail selected' : 'thumbnail'" [src]="image.src" />
     </div>
 </div>        

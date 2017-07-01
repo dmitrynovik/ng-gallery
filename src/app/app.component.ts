@@ -6,9 +6,9 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 export class AppComponent implements AfterViewInit  { 
 
-  images:Image[] = [
+  images:any[] = [
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Sydney_Opera_House_-_Dec_2008.jpg"},
-      {src: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Sydney_Harbour_pano_at_night.jpg"},
+      {src: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Aerial_view_of_Sydney_Harbour.jpg"},
       {src: "https://static.pexels.com/photos/54610/sydney-opera-house-australia-54610.jpeg"},
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/72/Sydney_skyline_from_the_north_aerial_2010.jpg"}
     ];
@@ -19,7 +19,11 @@ export class AppComponent implements AfterViewInit  {
     private currentIndex = 0;
     private selectedImage = this.images[this.currentIndex];
 
-    changeImage = () => this.selectedImage = this.images[++this.currentIndex % this.images.length];
+    changeImage = () => {
+        this.selectedImage.isSelected = false;
+        this.selectedImage = this.images[++this.currentIndex % this.images.length];
+        this.selectedImage.isSelected = true;
+    };
 
     play = () => {
       this.isPlaying = true;
@@ -35,8 +39,6 @@ export class AppComponent implements AfterViewInit  {
     toggleState = () => this.isPlaying ? this.stop() : this.play();
 
     ngAfterViewInit() {
-      if (!this.timer) {
         this.play();
-      }
     }
 }

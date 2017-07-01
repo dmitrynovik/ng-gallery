@@ -16,6 +16,12 @@
   height: 80px;
   float: left;
   margin-right: 33px;
+  opacity: 0.5;
+}
+
+.thumbnail.selected {
+  opacity: 1;
+  border: 5px solid black;
 }
 
 .thumbnails {
