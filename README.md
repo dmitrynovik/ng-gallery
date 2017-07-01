@@ -9,6 +9,8 @@
 ## Howto Build
 ### Prerequisites
 Node.js (tested with 6.9,4) must be installed
+### Source Code
+See /src/app folder
 ### Build and start
 * git clone https://github.com/dmitrynovik/ng-gallery.git
 * cd ng-gallery
