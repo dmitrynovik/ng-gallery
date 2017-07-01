@@ -26,18 +26,18 @@ export class AppComponent implements AfterContentInit  {
             const clipboard = event.clipboardData || event.originalEvent.clipboardData;
             if (clipboard && clipboard.items && clipboard.items) {
 
-			for (let index in clipboard.items) {
-    			var item = clipboard.items[index];
-    			if (item.kind === 'file') {
+			      for (let index in clipboard.items) {
+    			      var item = clipboard.items[index];
+    			      if (item.kind === 'file') {
 
-      				var blob = item.getAsFile();
-      				var reader = new FileReader();
-					const self = this;
+      				    var blob = item.getAsFile();
+      				    var reader = new FileReader();
+					        const self = this;
 
-      				reader.onload = function(event) {
-						const target:any = event.target;
+      				    reader.onload = function(event) {
+						          const target:any = event.target;
         					self.images.addImage(target.result);
-					};
+					     };
 
       				reader.readAsDataURL(blob);
     			}
