@@ -14,4 +14,9 @@ export class GalleryComponent {
         const src = e.target.src;
         this.images.selectImage(src);
     }
+
+    removeImage(e:any) {
+        const src = e.target.src;
+        this.images.removeImage(src);
+    }
 }

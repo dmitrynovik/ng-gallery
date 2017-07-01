@@ -1,5 +1,6 @@
 <div class="thumbnails">
     <div *ngFor="let img of images.images">
-        <img [className]="img.isSelected ? 'thumbnail selected' : 'thumbnail'" [src]="img.src" (click)="toggleImage($event)" />
+        <img [className]="img.isSelected ? 'thumbnail selected' : 'thumbnail'" [src]="img.src" 
+            (click)="toggleImage($event)" (dblclick)="removeImage($event)" />
     </div>
 </div>        

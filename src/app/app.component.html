@@ -1,5 +1,5 @@
 <div class="slide-root" (click)="images.toggleState()">
-    <span class="control" [className]="images.isPlaying ? 'control' : 'control ion-ios-pause'"></span>
+    <span class="control" *ngIf="images.images.length" [className]="images.isPlaying ? 'control' : 'control ion-ios-pause'"></span>
     <slide [image]="images.selectedImage"></slide>
 </div>
 <gallery [images]="images"></gallery>

@@ -1,1 +1,5 @@
-<img class="slide" alt="No image available" [src]="image.src" contenteditable="true" />
+<img class="slide" *ngIf="image.src" alt="No image available" [src]="image.src" contenteditable="true" />
+<div class="empty-image"  *ngIf="!image.src">
+    <h1>No image available</h1>
+    <p>Please paste an image here</p>
+</div>

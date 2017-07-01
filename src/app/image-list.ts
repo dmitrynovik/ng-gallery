@@ -1,5 +1,5 @@
 export default class ImageList {
-    public selectedImage: any;
+    public selectedImage:any = {};
     public currentIndex = -1;
 
     private interval = 2000;
@@ -7,20 +7,23 @@ export default class ImageList {
     private isPlaying:boolean = true;
 
     constructor(public images:any[]) {
-        if (images && images.length) {
-            this.currentIndex = 0;
-            this.selectedImage = this.images[this.currentIndex];
-            this.selectedImage.isSelected = true;
-        }
+        this.selectAtIndex(0);
     }
 
     moveNext = () => this.selectAtIndex( ++this.currentIndex % this.images.length );
 
     selectAtIndex = (i:number) => {
-        this.currentIndex = i;
         this.selectedImage.isSelected = false;
-        this.selectedImage = this.images[this.currentIndex];
-        this.selectedImage.isSelected = true;        
+
+        if (i < this.images.length) {
+            this.currentIndex = i;
+            this.selectedImage = this.images[this.currentIndex];
+            this.selectedImage.isSelected = true;        
+            
+        } else {
+            this.currentIndex = -1;
+            this.selectedImage = {};
+        }
     }
 
     selectImage = (src: string) => {
@@ -31,6 +34,11 @@ export default class ImageList {
             this.selectAtIndex(index);
             this.timer = setTimeout(this.play, this.interval);
         }
+    };
+
+    removeImage = (src: string) => {
+        this.images = this.images.filter(i => i.src != src);
+        this.selectAtIndex(0);
     };
 
     play = () => {
