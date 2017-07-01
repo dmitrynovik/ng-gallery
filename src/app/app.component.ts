@@ -1,10 +1,10 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   templateUrl: `./app.component.html`,
 })
-export class AppComponent implements AfterViewChecked  { 
+export class AppComponent implements AfterViewInit  { 
 
   images:Image[] = [
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Sydney_Opera_House_-_Dec_2008.jpg"},
@@ -13,22 +13,28 @@ export class AppComponent implements AfterViewChecked  {
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/72/Sydney_skyline_from_the_north_aerial_2010.jpg"}
     ];
 
-    private currentIndex = 0;
     private interval = 2000;
-    private timer:NodeJS.Timer;
+    private timer:NodeJS.Timer = null;
+    private isPlaying:boolean = true;
+    private currentIndex = 0;
+    private selectedImage = this.images[this.currentIndex];
 
-    selectedImage = this.images[this.currentIndex];
-
-    changeImage = () => this.selectedImage = this.images[this.currentIndex++ % this.images.length];
+    changeImage = () => this.selectedImage = this.images[++this.currentIndex % this.images.length];
 
     play = () => {
+      this.isPlaying = true;
       this.changeImage();
       this.timer = setTimeout(this.play, this.interval);
     };
 
-    stop = () => clearTimeout(this.timer);
+    stop = () => { 
+      clearTimeout(this.timer);
+      this.isPlaying = false;
+    }
 
-    ngAfterViewChecked() {
+    toggleState = () => this.isPlaying ? this.stop() : this.play();
+
+    ngAfterViewInit() {
       if (!this.timer) {
         this.play();
       }
