@@ -10,7 +10,7 @@
 
 ## Howto Build
 ### Prerequisites
-Node.js (tested with 6.9,4) must be installed
+Node.js (tested with 6.9,4)
 ### Source Code
 See /src/app folder
 ### Build and start
