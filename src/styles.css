@@ -9,6 +9,7 @@
 .slide-root {
   min-height: 500px;
   vertical-align: bottom;
+  cursor: pointer;
 }
 
 .thumbnail {
@@ -35,5 +36,4 @@
   font-size: 500%;
   z-index: 100;
   color: white;
-  cursor: pointer;
 }

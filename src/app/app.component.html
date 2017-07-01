@@ -1,5 +1,5 @@
-<div class="slide-root">
-    <span class="control" (click)="toggleState()" [className]="isPlaying ? 'control ion-ios-pause' : 'control ion-ios-play'"></span>
+<div class="slide-root" (click)="toggleState()">
+    <span class="control" [className]="isPlaying ? 'control' : 'control ion-ios-pause'"></span>
     <slide [image]="selectedImage"></slide>
 </div>
 <gallery [images]="images"></gallery>

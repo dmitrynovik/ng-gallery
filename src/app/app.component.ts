@@ -1,10 +1,10 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   templateUrl: `./app.component.html`,
 })
-export class AppComponent implements AfterViewInit  { 
+export class AppComponent implements AfterContentInit  { 
 
   images:any[] = [
       {src: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Sydney_Opera_House_-_Dec_2008.jpg"},
@@ -38,7 +38,7 @@ export class AppComponent implements AfterViewInit  {
 
     toggleState = () => this.isPlaying ? this.stop() : this.play();
 
-    ngAfterViewInit() {
+    ngAfterContentInit() {
         this.play();
     }
 }
