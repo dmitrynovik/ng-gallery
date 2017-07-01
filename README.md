@@ -4,7 +4,7 @@
 * Pasting image from clipboard into the window adds an image (supported by Google Chrome, Mozilla Firefox)
 * clicking on thumbnail selects that image
 * double-clicking on thumbnail deletes an image
-* clicking on the main slide pauses the slideshow
+* clicking on the main slide pauses or resumes the slideshow
 
 ## Howto Build
 ### Prerequisites
