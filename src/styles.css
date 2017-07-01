@@ -9,8 +9,12 @@ h1 {
   height: auto;
   font-size: 200%;
   text-align: center;
-  vertical-align: middle;
   margin-bottom: 50px;
+}
+
+.slide-root {
+  min-height: 500px;
+  vertical-align: bottom;
 }
 
 .thumbnail {
