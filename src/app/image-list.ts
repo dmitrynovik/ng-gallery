@@ -29,10 +29,14 @@ export default class ImageList {
     selectImage = (src: string) => {
         const image = this.images.find(i => i.src == src);
         if (image) {
-            clearTimeout(this.timer);
+            if (this.isPlaying)
+                clearTimeout(this.timer);
+
             const index = this.images.indexOf(image);
             this.selectAtIndex(index);
-            this.timer = setTimeout(this.play, this.interval);
+
+            if (this.isPlaying)
+                this.timer = setTimeout(this.play, this.interval);
         }
     };
 
