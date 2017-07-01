@@ -13,5 +13,5 @@ Node.js (tested with 6.9,4) must be installed
 * git clone https://github.com/dmitrynovik/ng-gallery.git
 * cd ng-gallery
 * npm install
-* npm run
+* npm start
 * browse localhost:3000
